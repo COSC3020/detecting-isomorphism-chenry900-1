@@ -13,7 +13,7 @@ function are_isomorphic(graph1, graph2) {
     return false;
     }
 }
-findPerm (graph1) {
+function findPerm (graph1) {
     var recurPerm = [];
     if (graph1.length <= 1) {
         return [graph1];
@@ -29,7 +29,7 @@ findPerm (graph1) {
     return recurPerm;
 }
 
-check(x, graph1, graph2) {
+function check(x, graph1, graph2) {
     for (var o = 0; o < x.length; o++) {
         for (var i = 0; i < x.length; i++) {
             if (graph1[o][i] != graph2[x[o]][x[i]]) {
