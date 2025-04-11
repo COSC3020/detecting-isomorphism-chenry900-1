@@ -13,7 +13,6 @@ function are_isomorphic(graph1, graph2) {
     return false;
     }
 }
-
 function findPerm (graph1) {
     var recurPerm = [];
     if (graph1.length <= 1) {
