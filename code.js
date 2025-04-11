@@ -21,7 +21,7 @@ function findPerm (graph1) {
     
 
     for (var i = 0; i < graph1.length; i++) {
-        var partial = findPerm(graph1.slice(0, i).concat(graph1.slice(i + 1)));
+        var partial = findPerm(graph1.slice(0, i).concat(graph1.slice(i + 1)));//copilot changed graph1.slice(0,i) + graph2(i +1) to concat
         for (var x of partial) {
             recurPerm.push([graph1[i]].concat(x));
         }
@@ -32,7 +32,7 @@ function findPerm (graph1) {
 function check(x, graph1, graph2) {
     for (var o = 0; o < x.length; o++) {
         for (var i = 0; i < x.length; i++) {
-            if (graph1[o][i] != graph2[x[o]][x[i]]) {
+            if (graph1[o][i] != graph2[x[o]][x[i]]) {// copilot helped me fix graph2 to work correctly
                 return false;
             }
         }
