@@ -11,8 +11,8 @@ are_isomorphic(graph1, graph2) {
         }
             
     return false;
+    }
 }
-
 findPerm (graph1) {
     var recurPerm = [];
     if (graph1.length <= 1) {
