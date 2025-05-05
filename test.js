@@ -25,8 +25,8 @@ function permuteGraph(graph, perm) {
     return newGraph;
 }
 
-// Run property manually without Mocha
-const prop = jsc.forall(jsc.nat(4), (size) => {
+// Property: graph and its permutation are isomorphic
+const propIsomorphic = jsc.forall(jsc.nat(4), (size) => {
     const n = Math.max(2, size);
     const graph = randomAdjMatrix(n);
     const perm = [...Array(n).keys()];
@@ -38,9 +38,14 @@ const prop = jsc.forall(jsc.nat(4), (size) => {
     return are_isomorphic(graph, permuted);
 });
 
-try {
-    jsc.assert(prop);
-    console.log("✅ All jsverify tests passed!");
-} catch (err) {
-    console.error("❌ jsverify property test failed:", err);
-}
+// Property: two random graphs are likely not isomorphic
+const propNonIsomorphic = jsc.forall(jsc.nat(4), (size) => {
+    const n = Math.max(3, size);
+    const g1 = randomAdjMatrix(n);
+    let g2;
+    do {
+        g2 = randomAdjMatrix(n);
+    } while (JSON.stringify(g1) === JSON.stringify(g2)); // avoid identical graphs
+
+    // The function should return false unless they are accidentally isomorphic
+    return !are_is_
