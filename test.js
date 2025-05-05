@@ -48,4 +48,16 @@ const propNonIsomorphic = jsc.forall(jsc.nat(4), (size) => {
     } while (JSON.stringify(g1) === JSON.stringify(g2)); // avoid identical graphs
 
     // The function should return false unless they are accidentally isomorphic
-    return !are_is_
+    return !are_isomorphic(g1, g2) || JSON.stringify(g1) === JSON.stringify(g2);
+});
+
+// Run tests
+try {
+    jsc.assert(propIsomorphic);
+    console.log("✅ Isomorphic (positive) tests passed!");
+
+    jsc.assert(propNonIsomorphic);
+    console.log("✅ Non-isomorphic (negative) tests passed!");
+} catch (err) {
+    console.error("❌ jsverify test failed:", err);
+}
