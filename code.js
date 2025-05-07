@@ -2,7 +2,9 @@ function are_isomorphic(graph1, graph2) {
     if (graph1.length != graph2.length) {
         return false;
     }
-
+    if (graph1.length == 0 && graph2.length == 0) {
+        return true;
+    }
     var perm = findPerm(graph1.length);
 
     for (var x of perm) {
@@ -11,7 +13,7 @@ function are_isomorphic(graph1, graph2) {
         }
             
     }
-    return true;
+    return false;
 }
 function findPerm (graph1) {
     var recurPerm = [];
