@@ -10,7 +10,7 @@ function are_isomorphic(graph1, graph2) {
             return true;
         }
             
-    return false;
+    return true;
     }
 }
 function findPerm (graph1) {
