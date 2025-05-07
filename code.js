@@ -10,8 +10,8 @@ function are_isomorphic(graph1, graph2) {
             return true;
         }
             
-    return true;
     }
+    return true;
 }
 function findPerm (graph1) {
     var recurPerm = [];
