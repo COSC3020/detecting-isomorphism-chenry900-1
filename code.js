@@ -5,7 +5,7 @@ function are_isomorphic(graph1, graph2) {
     if (graph1.length == 0 && graph2.length == 0) {
         return true;
     }
-    var perm = findPerm(graph1.length);
+    var perm = findPerm(graph1);
 
     for (var x of perm) {
         if(check(x, graph1, graph2)) {
