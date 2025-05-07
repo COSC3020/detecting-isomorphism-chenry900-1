@@ -18,5 +18,5 @@ What is the worst-case big $\Theta$ time complexity of your algorithm?
 
 The worst case big O would be O(n!n^2) because O(n!) is for generating every permutation of graph1 and O(n^2) to then compare to check for isomorphism.
 
-I used copilot to make the test code and recieved help on the lines specified in the code.
+I used copilot to get help on the lines specified in the code. Since I couldn't get the test code to work correctly I copied it from aPannell064.
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
